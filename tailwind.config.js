@@ -17,7 +17,7 @@ module.exports = {
     'background-dark': '#AEAEAE',
     'dark': '#0D1B1E',
     'accent': '#34D1BF',
-    'light-accent': '#90E5DC'
+    'light-accent': '#90E5DC',
   })
   },
   variants: {},
