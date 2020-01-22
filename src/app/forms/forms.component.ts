@@ -8,7 +8,22 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./forms.component.css']
 })
 export class FormsComponent {
-  markdown = `function Clare() {console.log('hey')};`
+  reactiveMarkdown = `myReactiveForm = new FormGroup({
+        rating: new FormControl(''),
+        name: new FormGroup({
+          petName: new FormControl(''),
+          officialName: new FormControl(''),
+        })
+      });`
+  builderMarkdown = `myReactiveFormBuilder = this.myFormBuilder.group({
+      rating: [''],
+      name: this.myFormBuilder.group({
+        petName: [''],
+        officialName: ['']
+      })
+    });
+
+    constructor(private myFormBuilder: FormBuilder) { }`
   myReactiveForm = new FormGroup({
       rating: new FormControl(''),
       name: new FormGroup({

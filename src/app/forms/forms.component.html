@@ -1,69 +1,87 @@
-<h1>Reactive Forms</h1>
+<h1 class="text-3xl">Forms</h1>
+<h3 class="text-2xl">Reactive Forms</h3>
+<h4 class="text-xl">With FormGroup & FormControl</h4>
 
-<markdown ngPreserveWhitespaces>
-  *Markdown*
-  ```javascript
-    console.log('hello')
-  ```
-</markdown>
-
+<ul>
+  <li>
+    import ReactiveFormsModule from '@angular/forms' to app.module.ts imports array
+  </li>
+  <li>
+    import FormGroup, FormControl from '@angular/forms' to the component.ts
+  </li>
+  <li>
+    [formGroup] = a directive that connects the form and the model
+  </li>
+  <li>
+    formGroup = directive that groups nested values inside the overall form
+  </li>
+  <li>
+    formControlName = directives that bind inputs to the form controls defined inside FormGroup & communicate changes
+  </li>
+  <li>
+    (ngSubmit) = event listener w callback method
+  </li>
+  <li>
+    button of type submit = triggers submission
+  </li>
+</ul>
+<div class="w-3/4">
 <markdown
-   [data]="markdown | language : 'javascript'">
+    ngPreserveWhitespaces
+    [data]="reactiveMarkdown | language : 'typescript'">
 </markdown>
-<p>
-  - import ReactiveFormsModule from '@angular/forms' to app.module.ts imports array
-- import FormGroup, FormControl from '@angular/forms' to the component.ts
-- [formGroup] = a directive that connects the form and the model
-- formGroup = directive that groups nested values inside the overall form
-- formControlName = directives that bind inputs to the form controls defined inside FormGroup & communicate changes
-- (ngSubmit) = event listener w callback method
-- button of type submit = triggers submission
-</p>
-<form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+</div>
+<form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
 
   <div formGroupName="name">
     <h2>Name</h2>
-    <label>
+    <label class="block text-gray-700 text-sm font-bold mb-2" >
       Official Name:
-      <input type="text" formControlName="officialName">
+      <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" formControlName="officialName">
     </label>
-    <label>
+    <label class="block text-gray-700 text-sm font-bold mb-2" >
       Pet Name:
-      <input type="text" formControlName="petName">
+      <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" formControlName="petName">
     </label>
   </div>
-  <label>
+  <label class="block text-gray-700 text-sm font-bold mb-2" >
     Rating
-  <input type="text" formControlName="rating">
+  <input type="number" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" formControlName="rating">
   </label>
-  <button type="submit" [disabled]="!myReactiveForm.valid">Submit</button>
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" [disabled]="!myReactiveForm.valid">Submit</button>
 
 </form>
 
-With FormBuilder
+<h4 class="text-xl">With FormBuilder</h4>
+
 - FormBuilder - injectable service providing factory methods for creating control instances (shorthand)
 - import ReactiveFormsModule from '@angular/forms' to app.module.ts imports array
 - import FormBuilder from '@angular/forms' and inject into contructor with private to create & initialize
-
-<form [formGroup]="myReactiveFormBuilder" (ngSubmit)="onSubmit()">
+<div class="w-3/4">
+<markdown
+    ngPreserveWhitespaces
+    [data]="builderMarkdown | language : 'typescript'">
+</markdown>
+</div>
+<form [formGroup]="myReactiveFormBuilder" (ngSubmit)="onSubmit()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
 
   <div formGroupName="name">
     <h2>Name</h2>
-    <label>
+    <label class="block text-gray-700 text-sm font-bold mb-2" >
       Official Name:
-      <input type="text" formControlName="officialName">
+      <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" formControlName="officialName">
     </label>
-    <label>
+    <label class="block text-gray-700 text-sm font-bold mb-2" >
       Pet Name:
-      <input type="text" formControlName="petName">
+      <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" formControlName="petName">
     </label>
   </div>
-  <label>
+  <label class="block text-gray-700 text-sm font-bold mb-2" >
     Rating
-  <input type="text" formControlName="rating">
+  <input type="number" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" formControlName="rating">
   </label>
-  <button type="submit" [disabled]="!myReactiveForm.valid">Submit</button>
+  <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" [disabled]="!myReactiveForm.valid">Submit</button>
 
 </form>
 
-<h1>Template-driven Forms</h1>
+<h3 class="text-2xl">Template-Driven Forms</h3>
