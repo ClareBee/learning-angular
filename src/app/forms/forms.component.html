@@ -1,34 +1,35 @@
 <h1 id="top" class="text-3xl">Forms</h1>
 <hr class="bg-accent h-1 w-full mb-4" />
-<a pageScroll [pageScrollDuration]="1000" href="#reactive-forms" class="block my-1 p-1 hover:bg-white">Reactive Forms</a>
-<a pageScroll [pageScrollDuration]="1000" href="#form-group" class="block my-1 p-1 hover:bg-white">FormGroup & FormControl</a>
-<a pageScroll [pageScrollDuration]="1000" href="#form-builder" class="block my-1 p-1 hover:bg-white">FormBuilder</a>
-<a pageScroll [pageScrollDuration]="1000" href="#validation" class="block my-1 p-1 hover:bg-white">Validation</a>
-<a pageScroll [pageScrollDuration]="1000" href="#tests" class="block my-1 p-1 hover:bg-white">Tests</a>
-<a pageScroll [pageScrollDuration]="1000" href="#template" class="block my-1 p-1 hover:bg-white">Template Forms</a>
-<a pageScroll [pageScrollDuration]="1000" href="#section1" class="block my-1 p-1 hover:bg-white">FormGroup & FormControl</a>
+<h4 class="text-lg text-secondary font-bold">Contents:</h4>
+<a pageScroll [pageScrollDuration]="1000" href="#reactive-forms" class="content block my-1 p-1 hover:bg-white">Reactive Forms</a>
+<a pageScroll [pageScrollDuration]="1000" href="#form-group" class="content block my-1 p-1 hover:bg-white">FormGroup & FormControl</a>
+<a pageScroll [pageScrollDuration]="1000" href="#form-builder" class="content block my-1 p-1 hover:bg-white">FormBuilder</a>
+<a pageScroll [pageScrollDuration]="1000" href="#validation" class="content block my-1 p-1 hover:bg-white">Validation</a>
+<a pageScroll [pageScrollDuration]="1000" href="#tests" class="content block my-1 p-1 hover:bg-white">Tests</a>
+<a pageScroll [pageScrollDuration]="1000" href="#template" class="content block my-1 p-1 hover:bg-white">Template Forms</a>
+<a pageScroll [pageScrollDuration]="1000" href="#section1" class="content block my-1 p-1 hover:bg-white">FormGroup & FormControl</a>
 
 <h3 id="reactive-forms" class="text-2xl mt-4">Reactive Forms</h3>
 <hr class="bg-primary h-1 w-full mb-4" />
 
 <div class="w-full bg-white py-2 px-4 my-2 rounded">
-  <h4 class="text-lg">What & Why?</h4>
-  <ul class="list-disc list-outside p-2">
-    <li class="my-2">
-      Suited for complex/dynamic forms - reactive updates -> better UX
+  <h4 class="text-lg"><mark>What & Why?</mark></h4>
+  <ul class="list-none list-outside p-2">
+    <li class="my-2 bullet">
+      Suited for complex/dynamic forms -> reactive updates -> better UX
     </li>
-    <li class="mb-2">
-      Uses observable/functional-style ReactiveFormsModule (import from '@angular/forms' & add to app.module.ts imports array)
+    <li class="mb-2 bullet">
+      Uses observables/functional-style <mark>ReactiveFormsModule</mark> (import from '@angular/forms' & add to app.module.ts imports array)
       <a href="https://angular.io/api/forms/ReactiveFormsModule" target="_blank" rel="noopener noreferrer">ReactiveFormsModule</a>
     </li>
-    <li class="mb-2">
-      Logic resides in component, rather than template -> easier to see (not obscured by css classes, html attributes)
+    <li class="mb-2 bullet">
+      Logic resides in component, rather than in template -> easier to see (not obscured by CSS classes, HTML attributes etc.)
     </li>
-    <li class="mb-2">
-      Synchronous, therefore no need to check what exists before validating
+    <li class="mb-2 bullet">
+      Synchronous, so no need to check what exists before validating
     </li>
-    <li class="mb-2">
-      Easier to test
+    <li class="mb-2 bullet">
+      Easier to test...
     </li>
   </ul>
 </div>
@@ -38,24 +39,24 @@
 <hr class="bg-secondary h-1 w-full mb-4" />
 
 <div class="w-full bg-white py-2 px-4 my-2 rounded">
-  <ul class="list-disc list-outside p-2">
-    <li class="my-2">
-      import FormGroup, FormControl from '@angular/forms' to the component.ts
+  <ul class="list-none list-outside p-2">
+    <li class="my-2 bullet">
+      Import <mark>FormGroup</mark>, <mark>FormControl</mark> from '@angular/forms' into your specific component.ts
     </li>
-    <li class="mb-2">
-      [formGroup] = a directive that connects the form and the model
+    <li class="mb-2 bullet">
+      <mark>[formGroup]</mark> = directive that connects form to component
     </li>
-    <li class="mb-2">
-      formGroup = directive that groups nested values inside the overall form
+    <li class="mb-2 bullet">
+      <mark>formGroup</mark> = directive that groups nested values inside overall form
     </li>
-    <li class="mb-2">
-      formControlName = directives that bind inputs to the form controls defined inside FormGroup & communicate changes
+    <li class="mb-2 bullet">
+      <mark>formControlName</mark> = directives that bind inputs to form controls defined inside FormGroup & communicate changes
     </li>
-    <li class="mb-2">
-      (ngSubmit) = event listener w callback method
+    <li class="mb-2 bullet">
+      <mark>(ngSubmit)</mark> = event listener w callback method
     </li>
-    <li class="mb-2">
-      button of type submit = triggers submission
+    <li class="mb-2 bullet">
+      Button of type submit = triggers submission
     </li>
   </ul>
 </div>
@@ -94,11 +95,11 @@
 
 <div class="w-full bg-white py-2 px-4 my-2">
   <ul class="list-disc list-outside p-2">
-    <li class="my-2">
-      FormBuilder - injectable service providing factory methods for creating control instances (shorthand)
+    <li class="my-2 bullet">
+      <mark>FormBuilder</mark> - injectable service providing factory methods for creating control instances (shorthand)
     </li>
-    <li class="mb-2">
-      import FormBuilder from '@angular/forms' and inject into contructor with private to create & initialize
+    <li class="mb-2 bullet">
+      Import FormBuilder from '@angular/forms' & inject into contructor prefixed by 'private' to create & initialize
     </li>
   </ul>
 </div>
@@ -135,8 +136,8 @@
 <h4 id="validation" class="text-xl">Validation</h4>
 <hr class="bg-secondary h-1 w-full mb-4" />
 <div>
-  You can track the state of your form with formName.status
-  Angular has special css classes that change along with the status
+  <p class="content">You can track the state of your form with formName.status</p>
+  <p class="content">Angular has special css classes that change along with the status</p>
     <table class="text-left w-full border-collapse"> <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
       <thead>
         <tr>
@@ -179,28 +180,29 @@
 
 <h4 id="tests" class="text-xl">Tests</h4>
 <hr class="bg-secondary h-1 w-full" />
+<p>WIP</p>
 
 <h3 id="template-forms" class="text-2xl">Template-Driven Forms</h3>
 <hr class="bg-primary h-1 w-full mb-4" />
 
 <div class="w-full bg-white py-2 px-4 my-2 rounded">
   <ul class="list-disc list-outside p-2">
-    <li class="my-2">
+    <li class="my-2 bullet">
       Suited for simple forms
     </li>
-    <li class="mb-2">
+    <li class="mb-2 bullet">
       Arguably a simpler syntax (similar to AngularJS)
     </li>
-    <li class="mb-2">
-      Data model handled by ngModel & 2-way data-binding -  for reading and writing input-control values - ok if you know the shape of your form in advance
+    <li class="mb-2 bullet">
+      Data model handled by <mark>#formName="ngForm"</mark>,<mark>(ngSubmit)="onSubmit()"</mark>, and <mark>[(ngModel)]</mark> & 2-way data-binding -  for reading and writing input-control values - ok if you know the shape of your form in advance
     </li>
-    <li class="mb-2">
+    <li class="mb-2 bullet">
       Asynchronous
     </li>
-    <li class="mb-2">
-      Uses the FormsModule
+    <li class="mb-2 bullet">
+      Uses the <mark>FormsModule</mark> (import into app.module.ts)
     </li>
-    <li class="mb-2">
+    <li class="mb-2 bullet">
       Harder to test
     </li>
   </ul>
@@ -209,7 +211,7 @@
 <markdown src="../assets/templateForm.html"></markdown>
 
 <div [hidden]="submitted">
-  <form #doggoForm="ngForm" (ngSubmit)="onSubmit()">
+  <form #doggoForm="ngForm" (ngSubmit)="onSubmit()" class="w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
     <!-- pet name -->
     <div>
       <label for="petName" class="block text-gray-700 text-sm font-bold mb-2">Pet Name</label>
@@ -236,7 +238,7 @@
         <option *ngFor="let rating of ratings" [value]="rating">{{rating}}</option>
       </select>
     </div>
-    <button class="bg-primary hover:bg-accent text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" [disabled]="!doggoForm.form.valid">Submit</button>
+    <button class="bg-primary hover:bg-accent text-white font-bold my-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" [disabled]="!doggoForm.form.valid">Submit</button>
   </form>
 </div>
 
@@ -258,10 +260,6 @@
   <button class="bg-secondary hover:bg-accent text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" (click)="submitted=false">Edit</button>
 </div>
 
-<h3 id="template-forms" class="text-2xl">Validation Template-Driven Forms</h3>
+<h3 id="template-forms" class="text-2xl">Validation</h3>
 <hr class="bg-primary h-1 w-full mb-4" />
-
-<div class="w-full bg-white py-2 px-4 my-2 rounded">
-  Why check dirty and touched?
-You may not want your application to display errors before the user has a chance to edit the form. The checks for dirty and touched prevent errors from showing until the user does one of two things: changes the value, turning the control dirty; or blurs the form control element, setting the control to touched.
-</div>
+<p>WIP</p>

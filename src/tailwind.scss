@@ -13,3 +13,29 @@ header {
     color: theme(backgroundColor.accent);
   }
 }
+
+li.bullet:before {
+  content: '\1F5A4';
+  font-size: .75rem;
+}
+
+.content:before {
+  content: '-';
+  color: theme(textColor.secondary);
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.wavy-underline {
+  line-height: 1.5;
+  text-decoration-line: underline;
+  text-decoration-color: theme(textColor.secondary);
+  text-decoration-style: wavy;
+}
+
+mark {
+  display: inline-block;
+  line-height: 0rem;
+  padding-bottom: .65rem;
+  background-color: theme(textColor.light-accent);
+}

@@ -9,14 +9,15 @@ module.exports = {
     'dark': '#0D1B1E',
     'accent': '#34D1BF',
   }),
-  color: theme => ({
-    ...theme('colors'),
+  textColor: theme => ({
     'primary': '#3454D1',
     'secondary': '#D1345B',
     'background': '#efefef',
+    'white': '#fff',
     'background-dark': '#AEAEAE',
     'dark': '#0D1B1E',
     'accent': '#34D1BF',
+    'light-accent': '#90E5DC'
   })
   },
   variants: {},
