@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.active {
+  background-color: theme(backgroundColor.background-dark);
+  color: theme(colors.white);
+  padding: inherit;
+}
