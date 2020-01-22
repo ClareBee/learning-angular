@@ -1,0 +1,13 @@
+<!-- simplified form with one input and bound to model Doggo -->
+
+<form #doggoForm="ngForm" (ngSubmit)="onSubmit()">
+  <label for="petName">Pet Name</label>
+  <input type="text" id="petName"
+         required
+         [(ngModel)]="doggo.petName" name="petName" #petName="ngModel">
+  <div [hidden]="petName.valid || petName.pristine" class="alert alert-danger">
+    Pet Name is required
+  </div>
+  <button type="submit" [disabled]="!doggoForm.form.valid">Submit</button>
+  <button type="button" (click)="newDoggo(); doggoForm.reset()">New Doggo</button>
+</form>

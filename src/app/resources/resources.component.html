@@ -1,2 +1,42 @@
-<p>resources works!</p>
-https://www.thecssninja.com/javascript/pointer-events-60fps
+<h1 id="top" class="text-3xl">Gotchas & Resources</h1>
+<hr class="bg-accent h-1 w-full mb-4" />
+<div class="inline-block my-2 w-full">
+  <h2 class="text-xl">Active Link</h2>
+  <hr class="bg-secondary h-1 w-full mb-4" />
+
+  <p>
+    If you have a root - '/' - route, it will always be active unless you add the following to the element with the routerLink
+  </p>
+  <markdown [data]="routerLink | language: 'typescript'"></markdown>
+</div>
+<div class="inline-block my-4 w-full">
+  <h2 class="text-xl">Tailwind CSS</h2>
+  <hr class="bg-secondary h-1 w-full mb-4" />
+  https://tailwindcss.com/
+  <p>https://dev.to/beavearony/building-tailwind-css-in-an-angular-cli-project-e04</p>
+  <p>
+    If you extend the palette in tailwind.config.js, access the colours using dot notation in your scss file
+  </p>
+  <markdown [data]="cssSnippet | language: 'css'"></markdown>
+</div>
+<div class="inline-block my-2 w-full">
+  <h2 class="text-xl">PageScroll Directive</h2>
+  <hr class="bg-secondary h-1 w-full mb-4" />
+  <p>'Animated scrolling functionality for angular written in TypeScript' - https://github.com/Nolanus/ngx-page-scroll
+  <markdown [data]="pageScroll | language: 'javascript'"></markdown>
+  <p>
+    Disable hover (& other pointer events) on scroll to improve performance
+  </p>
+  <a href="https://www.thecssninja.com/javascript/pointer-events-60fps">The CSS Ninja Blog Post</a>
+</div>
+<div class="inline-block my-2 w-full">
+  <h2 class="text-xl">Prisma.js</h2>
+  <hr class="bg-secondary h-1 w-full mb-4" />
+  Access the markdown via a template-literal class property to avoid having to escape characters
+
+</div>
+<div class="inline-block my-2 w-full">
+  <h2 class="text-xl">Ngx Markdown</h2>
+  <hr class="bg-secondary h-1 w-full mb-4" />
+  https://github.com/jfcere/ngx-markdown
+</div>

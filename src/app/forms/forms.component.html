@@ -82,7 +82,7 @@
     Rating
   <input type="number" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" formControlName="rating">
   </label>
-  <button class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" [disabled]="!myReactiveForm.valid">Submit</button>
+  <button class="bg-primary hover:bg-accent text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" [disabled]="!myReactiveForm.valid">Submit</button>
 
 </form>
 <a pageScroll [pageScrollDuration]="1000" href="#top" class="inline-block my-1 mb-4 p-1 bg-background-dark text-white">To Top</a>
@@ -123,13 +123,55 @@
     Rating
   <input type="number" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" formControlName="rating">
   </label>
-  <button class="bg-primary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" [disabled]="!myReactiveForm.valid">Submit</button>
+  <button class="bg-primary hover:bg-accent text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" [disabled]="!myReactiveForm.valid">Submit</button>
 
 </form>
 <a pageScroll [pageScrollDuration]="1000" href="#top" class="inline-block my-1 mb-4 p-1 bg-background-dark text-white">To Top</a>
 
 <h4 id="validation" class="text-xl">Validation</h4>
 <hr class="bg-secondary h-1 w-full mb-4" />
+<div>
+  You can track the state of your form with formName.status
+  Angular has special css classes that change along with the status
+    <table class="text-left w-full border-collapse"> <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
+      <thead>
+        <tr>
+          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Status</th>
+          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">If True</th>
+          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">If False</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="hover:bg-grey-lighter">
+          <td class="py-4 px-6 border-b border-grey-light">Control has been visited</td>
+          <td class="py-4 px-6 border-b border-grey-light">
+            <p class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark">ng-touched</p>
+          </td>
+          <td class="py-4 px-6 border-b border-grey-light">
+            <p class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark">ng-untouched</p>
+          </td>
+        </tr>
+        <tr class="hover:bg-grey-lighter">
+          <td class="py-4 px-6 border-b border-grey-light">Control value has changed</td>
+          <td class="py-4 px-6 border-b border-grey-light">
+            <p class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark">ng-dirty</p>
+          </td>
+          <td class="py-4 px-6 border-b border-grey-light">
+            <p class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark">ng-pristine</p>
+          </td>
+        </tr>
+        <tr class="hover:bg-grey-lighter">
+          <td class="py-4 px-6 border-b border-grey-light">Control value is valid </td>
+          <td class="py-4 px-6 border-b border-grey-light">
+            <p class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark">ng-valid</p>
+          </td>
+          <td class="py-4 px-6 border-b border-grey-light">
+            <p class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark">ng-invalid</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
 
 <h4 id="tests" class="text-xl">Tests</h4>
 <hr class="bg-secondary h-1 w-full" />
@@ -146,7 +188,7 @@
       Arguably a simpler syntax (similar to AngularJS)
     </li>
     <li class="mb-2">
-      Data model handled by ngModel & 2-way data-binding - ok if you know the shape of your form in advance
+      Data model handled by ngModel & 2-way data-binding -  for reading and writing input-control values - ok if you know the shape of your form in advance
     </li>
     <li class="mb-2">
       Asynchronous
@@ -160,3 +202,58 @@
   </ul>
 </div>
 <a pageScroll [pageScrollDuration]="1000" href="#top" class="inline-block my-1 mb-4 p-1 bg-background-dark text-white">To Top</a>
+<markdown src="../assets/templateForm.html"></markdown>
+
+<div [hidden]="submitted">
+  <form #doggoForm="ngForm" (ngSubmit)="onSubmit()">
+    <!-- pet name -->
+    <div>
+      <label for="petName" class="block text-gray-700 text-sm font-bold mb-2">Pet Name</label>
+      <input type="text" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" id="petName"
+             required
+             [(ngModel)]="doggo.petName" name="petName">
+    </div>
+    <!-- official name -->
+    <div>
+      <label for="officialName" class="block text-gray-700 text-sm font-bold mb-2">Official Name</label>
+      <input type="text"  class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" id="officialName"
+             [(ngModel)]="doggo.officialName" name="officialName">
+    </div>
+    <!-- rating -->
+    <div>
+      <label for="rating" class="block text-gray-700 text-sm font-bold mb-2">Rating</label>
+      <select class="form-control"  class="bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" id="rating"
+              required
+              [(ngModel)]="doggo.rating" name="rating">
+        <option *ngFor="let rating of ratings" [value]="rating">{{rating}}</option>
+      </select>
+    </div>
+    <button class="bg-primary hover:bg-accent text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" [disabled]="!doggoForm.form.valid">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h2 class="text-xl">You submitted the following:</h2>
+  <div>
+    <div class="block text-gray-700 text-sm font-bold mb-2">Pet Name</div>
+    <div class="block text-dark text-md my-2 bg-white">{{ doggo.petName }}</div>
+  </div>
+  <div>
+    <div class="block text-gray-700 text-sm font-bold mb-2">Official Name</div>
+    <div class="block text-dark text-md my-2 bg-white">{{ doggo.officialName }}</div>
+  </div>
+  <div>
+    <div class="block text-gray-700 text-sm font-bold mb-2">Rating</div>
+    <div class="block text-dark text-md my-2 bg-white">{{ doggo.rating }}</div>
+  </div>
+  <br>
+  <button class="bg-secondary hover:bg-accent text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" (click)="submitted=false">Edit</button>
+</div>
+
+<h3 id="template-forms" class="text-2xl">Validation Template-Driven Forms</h3>
+<hr class="bg-primary h-1 w-full mb-4" />
+
+<div class="w-full bg-white py-2 px-4 my-2 rounded">
+  Why check dirty and touched?
+You may not want your application to display errors before the user has a chance to edit the form. The checks for dirty and touched prevent errors from showing until the user does one of two things: changes the value, turning the control dirty; or blurs the form control element, setting the control to touched.
+</div>

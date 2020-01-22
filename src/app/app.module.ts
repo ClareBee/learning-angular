@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+
 import { MarkdownModule } from 'ngx-markdown';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
-
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsComponent } from './forms/forms.component';
@@ -28,8 +30,10 @@ import { ResourcesComponent } from './resources/resources.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
-    MarkdownModule.forRoot(),
+    HttpClientModule,
+    MarkdownModule.forRoot({ loader: HttpClient }),
     NgxPageScrollModule
   ],
   providers: [],
