@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewChecked } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 
@@ -8,6 +8,7 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./forms.component.css']
 })
 export class FormsComponent {
+  markdown = `function Clare() {console.log('hey')};`
   myReactiveForm = new FormGroup({
       rating: new FormControl(''),
       name: new FormGroup({

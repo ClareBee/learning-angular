@@ -25,9 +25,15 @@
             ],
             "styles": [
               "src/tailwind.scss",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/prismjs/plugins/toolbar/prism-toolbar.css",
+              "node_modules/prismjs/themes/prism-okaidia.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/marked/lib/marked.js",
+              "node_modules/prismjs/prism.js",
+              "node_modules/prismjs/components/prism-css.min.js",
+            ],
             "customWebpackConfig": {
               "path": "extra-webpack.config.js"
             }
