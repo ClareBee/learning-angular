@@ -1,7 +1,58 @@
 <h1>Reactive Forms</h1>
-<form>
+<p>
+  - import ReactiveFormsModule from '@angular/forms' to app.module.ts imports array
+- import FormGroup, FormControl from '@angular/forms' to the component.ts
+- [formGroup] = a directive that connects the form and the model
+- formGroup = directive that groups nested values inside the overall form
+- formControlName = directives that bind inputs to the form controls defined inside FormGroup & communicate changes
+- (ngSubmit) = event listener w callback method
+- button of type submit = triggers submission
+</p>
+<form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">
+
+  <div formGroupName="name">
+    <h2>Name</h2>
+    <label>
+      Official Name:
+      <input type="text" formControlName="officialName">
+    </label>
+    <label>
+      Pet Name:
+      <input type="text" formControlName="petName">
+    </label>
+  </div>
+  <label>
+    Rating
+  <input type="text" formControlName="rating">
+  </label>
+  <button type="submit" [disabled]="!myReactiveForm.valid">Submit</button>
+
+</form>
+
+With FormBuilder
+- FormBuilder - injectable service providing factory methods for creating control instances (shorthand)
+- import ReactiveFormsModule from '@angular/forms' to app.module.ts imports array
+- import FormBuilder from '@angular/forms' and inject into contructor with private to create & initialize
+
+<form [formGroup]="myReactiveFormBuilder" (ngSubmit)="onSubmit()">
+
+  <div formGroupName="name">
+    <h2>Name</h2>
+    <label>
+      Official Name:
+      <input type="text" formControlName="officialName">
+    </label>
+    <label>
+      Pet Name:
+      <input type="text" formControlName="petName">
+    </label>
+  </div>
+  <label>
+    Rating
+  <input type="text" formControlName="rating">
+  </label>
+  <button type="submit" [disabled]="!myReactiveForm.valid">Submit</button>
 
 </form>
 
 <h1>Template-driven Forms</h1>
-<form action=""></form>
