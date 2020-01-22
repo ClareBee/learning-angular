@@ -1,6 +1,11 @@
 module.exports = {
   theme: {
-    extend: {}
+    backgroundColor: theme => ({
+    ...theme('colors'),
+    'primary': '#3490dc',
+    'secondary': '#ffed4a',
+    'background': '#efefef',
+    })
   },
   variants: {},
   plugins: []
