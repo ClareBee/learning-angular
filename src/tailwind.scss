@@ -7,7 +7,6 @@
   color: theme(colors.white);
 }
 
-// overwrite prism for the header logo
 header {
     .token.function {
     color: theme(backgroundColor.accent);
@@ -15,7 +14,7 @@ header {
 }
 
 li.bullet:before {
-  content: '\1F5A4';
+  content: "\01F5A4";
   font-size: .75rem;
 }
 

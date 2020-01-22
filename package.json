@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --prod --output-path docs --base-href /learning-angular/"
+    "deploy-build": "ng build --prod --output-path docs --base-href /learning-angular/",
+    "deploy": "ngh"
   },
   "private": true,
   "dependencies": {

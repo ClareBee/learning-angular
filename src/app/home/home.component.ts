@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  underConstruction = `UnderConstruction // getting there slowly`
   constructor() { }
 
   ngOnInit() {
