@@ -1,13 +1,13 @@
-<h1 class="text-3xl">Forms</h1>
-Reactive Forms
-<a pageScroll [pageScrollDuration]="2000" href="#section1">FormGroup & FormControl</a>
-- FormBuilder
-- Validation
-- Tests
-TemplateForms
-- Validation
-- Tests
-<h3 class="text-2xl">Reactive Forms</h3>
+<h1 id="top" class="text-3xl">Forms</h1>
+<a pageScroll [pageScrollDuration]="1500" href="#reactive-forms" class="block my-1 p-1 hover:bg-white">Reactive Forms</a>
+<a pageScroll [pageScrollDuration]="1500" href="#form-group" class="block my-1 p-1 hover:bg-white">FormGroup & FormControl</a>
+<a pageScroll [pageScrollDuration]="1500" href="#form-builder" class="block my-1 p-1 hover:bg-white">FormBuilder</a>
+<a pageScroll [pageScrollDuration]="1500" href="#validation" class="block my-1 p-1 hover:bg-white">Validation</a>
+<a pageScroll [pageScrollDuration]="1500" href="#tests" class="block my-1 p-1 hover:bg-white">Tests</a>
+<a pageScroll [pageScrollDuration]="1500" href="#template" class="block my-1 p-1 hover:bg-white">Template Forms</a>
+<a pageScroll [pageScrollDuration]="1500" href="#section1" class="block my-1 p-1 hover:bg-white">FormGroup & FormControl</a>
+
+<h3 id="reactive-forms" class="text-2xl">Reactive Forms</h3>
 <div class="w-full lg:w-3/4 bg-white py-2 px-4 my-2 rounded">
   <h4 class="text-lg">What & Why?</h4>
   <ul class="list-disc list-outside p-2">
@@ -29,7 +29,9 @@ TemplateForms
     </li>
   </ul>
 </div>
-<h4 id="section1" class="text-xl">With FormGroup & FormControl</h4>
+<a pageScroll [pageScrollDuration]="1500" href="#top" class="block my-1 p-1">To Top</a>
+
+<h4 id="form-group" class="text-xl">With FormGroup & FormControl</h4>
 <div class="w-full lg:w-3/4 bg-white py-2 px-4 my-2 rounded">
   <ul class="list-disc list-outside p-2">
     <li class="my-2">
@@ -78,8 +80,9 @@ TemplateForms
   <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" [disabled]="!myReactiveForm.valid">Submit</button>
 
 </form>
+<a pageScroll [pageScrollDuration]="1500" href="#top" class="block my-1 p-1">To Top</a>
 
-<h4 class="text-xl">With FormBuilder</h4>
+<h4 id="form-builder" class="text-xl">With FormBuilder</h4>
 <div class="w-full lg:w-3/4 bg-white py-2 px-4 my-2">
   <ul class="list-disc list-outside p-2">
     <li class="my-2">
@@ -116,8 +119,15 @@ TemplateForms
   <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" [disabled]="!myReactiveForm.valid">Submit</button>
 
 </form>
+<a pageScroll [pageScrollDuration]="1500" href="#top" class="block my-1 p-1">To Top</a>
 
-<h3 class="text-2xl">Template-Driven Forms</h3>
+<div id="validation">
+
+</div>
+<div id="tests">
+
+</div>
+<h3 id="template-forms" class="text-2xl">Template-Driven Forms</h3>
 <div class="w-full lg:w-3/4 bg-white py-2 px-4 my-2 rounded">
   <ul class="list-disc list-outside p-2">
     <li class="my-2">
@@ -140,3 +150,4 @@ TemplateForms
     </li>
   </ul>
 </div>
+<a pageScroll [pageScrollDuration]="1500" href="#top" class="block my-1 p-1">To Top</a>

@@ -1,13 +1,14 @@
-import { Component, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
-
+import { disableHover } from '../utils/utils';
+console.log('utils', disableHover)
 @Component({
   selector: 'app-forms',
   templateUrl: './forms.component.html',
   styleUrls: ['./forms.component.css']
 })
-export class FormsComponent {
+export class FormsComponent implements OnInit {
   reactiveMarkdown = `myReactiveForm = new FormGroup({
     rating: new FormControl(''),
     name: new FormGroup({
@@ -40,6 +41,8 @@ constructor(private myFormBuilder: FormBuilder) { }`
     })
   });
 
-  constructor(private myFormBuilder: FormBuilder) { }
-
+  constructor(private myFormBuilder: FormBuilder){ }
+  ngOnInit(){
+    disableHover();
+  }
 }
