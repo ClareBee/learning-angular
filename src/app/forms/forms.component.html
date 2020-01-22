@@ -78,8 +78,10 @@
       <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" formControlName="petName">
     </label>
   </div>
+  <h2 class="block text-gray-700 text-lg font-bold mb-2">Rating</h2>
+
   <label class="block text-gray-700 text-sm font-bold mb-2" >
-    Rating
+    Mark out of 10
   <input type="number" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" formControlName="rating">
   </label>
   <button class="bg-primary hover:bg-accent text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" [disabled]="!myReactiveForm.valid">Submit</button>
@@ -119,8 +121,10 @@
       <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" formControlName="petName">
     </label>
   </div>
+  <h2 class="block text-gray-700 text-lg font-bold mb-2">Rating</h2>
+
   <label class="block text-gray-700 text-sm font-bold mb-2" >
-    Rating
+    Marks out of 10
   <input type="number" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" formControlName="rating">
   </label>
   <button class="bg-primary hover:bg-accent text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" [disabled]="!myReactiveForm.valid">Submit</button>
@@ -211,7 +215,11 @@
       <label for="petName" class="block text-gray-700 text-sm font-bold mb-2">Pet Name</label>
       <input type="text" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" id="petName"
              required
-             [(ngModel)]="doggo.petName" name="petName">
+             [(ngModel)]="doggo.petName" name="petName" #petName="ngModel">
+      <div [hidden]="petName.valid || petName.pristine"
+          class="bg-secondary text-white">
+       Name is required
+     </div>
     </div>
     <!-- official name -->
     <div>

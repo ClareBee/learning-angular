@@ -36,15 +36,15 @@ export class FormsComponent implements OnInit {
   reactiveMarkdown = `myReactiveForm = new FormGroup({
     rating: new FormControl(''),
     name: new FormGroup({
-      petName: new FormControl(''),
       officialName: new FormControl(''),
+      petName: new FormControl(''),
     })
   });`
   builderMarkdown = `myReactiveFormBuilder = this.myFormBuilder.group({
     rating: [''],
     name: this.myFormBuilder.group({
+      officialName: [''],
       petName: [''],
-      officialName: ['']
     })
   });
 
@@ -53,16 +53,16 @@ constructor(private myFormBuilder: FormBuilder) { }`
   myReactiveForm = new FormGroup({
       rating: new FormControl(''),
       name: new FormGroup({
-        petName: new FormControl(''),
         officialName: new FormControl(''),
+        petName: new FormControl(''),
       })
     });
 
   myReactiveFormBuilder = this.myFormBuilder.group({
     rating: [''],
     name: this.myFormBuilder.group({
+      officialName: [''],
       petName: [''],
-      officialName: ['']
     })
   });
 

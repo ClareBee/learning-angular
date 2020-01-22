@@ -6,3 +6,10 @@
   background-color: theme(backgroundColor.background-dark);
   color: theme(colors.white);
 }
+
+// overwrite prism for the header logo
+header {
+    .token.function {
+    color: theme(backgroundColor.accent);
+  }
+}
