@@ -9,21 +9,21 @@ import { FormBuilder } from '@angular/forms';
 })
 export class FormsComponent {
   reactiveMarkdown = `myReactiveForm = new FormGroup({
-        rating: new FormControl(''),
-        name: new FormGroup({
-          petName: new FormControl(''),
-          officialName: new FormControl(''),
-        })
-      });`
+    rating: new FormControl(''),
+    name: new FormGroup({
+      petName: new FormControl(''),
+      officialName: new FormControl(''),
+    })
+  });`
   builderMarkdown = `myReactiveFormBuilder = this.myFormBuilder.group({
-      rating: [''],
-      name: this.myFormBuilder.group({
-        petName: [''],
-        officialName: ['']
-      })
-    });
+    rating: [''],
+    name: this.myFormBuilder.group({
+      petName: [''],
+      officialName: ['']
+    })
+  });
 
-    constructor(private myFormBuilder: FormBuilder) { }`
+constructor(private myFormBuilder: FormBuilder) { }`
   myReactiveForm = new FormGroup({
       rating: new FormControl(''),
       name: new FormGroup({

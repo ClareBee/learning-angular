@@ -1,40 +1,67 @@
 <h1 class="text-3xl">Forms</h1>
+Reactive Forms
+- FormGroup & FormControl
+- FormBuilder
+- Validation
+- Tests
+TemplateForms
+- Validation
+- Tests
 <h3 class="text-2xl">Reactive Forms</h3>
-<h4 class="text-xl">With FormGroup & FormControl</h4>
-
-<ul>
-  <li>
-    import ReactiveFormsModule from '@angular/forms' to app.module.ts imports array
-  </li>
-  <li>
-    import FormGroup, FormControl from '@angular/forms' to the component.ts
-  </li>
-  <li>
-    [formGroup] = a directive that connects the form and the model
-  </li>
-  <li>
-    formGroup = directive that groups nested values inside the overall form
-  </li>
-  <li>
-    formControlName = directives that bind inputs to the form controls defined inside FormGroup & communicate changes
-  </li>
-  <li>
-    (ngSubmit) = event listener w callback method
-  </li>
-  <li>
-    button of type submit = triggers submission
-  </li>
-</ul>
-<div class="w-3/4">
-<markdown
-    ngPreserveWhitespaces
-    [data]="reactiveMarkdown | language : 'typescript'">
-</markdown>
+<div class="w-full lg:w-3/4 bg-white py-2 px-4 my-2 rounded">
+  <h4 class="text-lg">What & Why?</h4>
+  <ul class="list-disc list-outside p-2">
+    <li class="my-2">
+      Suited for complex/dynamic forms - reactive updates -> better UX
+    </li>
+    <li class="mb-2">
+      Uses observable/functional-style ReactiveFormsModule (import from '@angular/forms' & add to app.module.ts imports array)
+      <a href="https://angular.io/api/forms/ReactiveFormsModule" target="_blank" rel="noopener noreferrer">ReactiveFormsModule</a>
+    </li>
+    <li class="mb-2">
+      Logic resides in component, rather than template -> easier to see (not obscured by css classes, html attributes)
+    </li>
+    <li class="mb-2">
+      Synchronous, therefore no need to check what exists before validating
+    </li>
+    <li class="mb-2">
+      Easier to test
+    </li>
+  </ul>
 </div>
-<form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+<h4 class="text-xl">With FormGroup & FormControl</h4>
+<div class="w-full lg:w-3/4 bg-white py-2 px-4 my-2 rounded">
+  <ul class="list-disc list-outside p-2">
+    <li class="my-2">
+      import FormGroup, FormControl from '@angular/forms' to the component.ts
+    </li>
+    <li class="mb-2">
+      [formGroup] = a directive that connects the form and the model
+    </li>
+    <li class="mb-2">
+      formGroup = directive that groups nested values inside the overall form
+    </li>
+    <li class="mb-2">
+      formControlName = directives that bind inputs to the form controls defined inside FormGroup & communicate changes
+    </li>
+    <li class="mb-2">
+      (ngSubmit) = event listener w callback method
+    </li>
+    <li class="mb-2">
+      button of type submit = triggers submission
+    </li>
+  </ul>
+</div>
+<div class="w-full lg:w-3/4 my-2">
+  <markdown
+      ngPreserveWhitespaces
+      [data]="reactiveMarkdown | language : 'typescript'">
+  </markdown>
+</div>
+<form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()" class="w-full lg:w-3/4 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
 
   <div formGroupName="name">
-    <h2>Name</h2>
+    <h2 class="block text-gray-700 text-lg font-bold mb-2">Name</h2>
     <label class="block text-gray-700 text-sm font-bold mb-2" >
       Official Name:
       <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" formControlName="officialName">
@@ -53,20 +80,26 @@
 </form>
 
 <h4 class="text-xl">With FormBuilder</h4>
-
-- FormBuilder - injectable service providing factory methods for creating control instances (shorthand)
-- import ReactiveFormsModule from '@angular/forms' to app.module.ts imports array
-- import FormBuilder from '@angular/forms' and inject into contructor with private to create & initialize
-<div class="w-3/4">
-<markdown
-    ngPreserveWhitespaces
-    [data]="builderMarkdown | language : 'typescript'">
-</markdown>
+<div class="w-full lg:w-3/4 bg-white py-2 px-4 my-2">
+  <ul class="list-disc list-outside p-2">
+    <li class="my-2">
+      FormBuilder - injectable service providing factory methods for creating control instances (shorthand)
+    </li>
+    <li class="mb-2">
+      import FormBuilder from '@angular/forms' and inject into contructor with private to create & initialize
+    </li>
+  </ul>
 </div>
-<form [formGroup]="myReactiveFormBuilder" (ngSubmit)="onSubmit()" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+<div class="w-full lg:w-3/4 my-2 rounded">
+  <markdown
+      ngPreserveWhitespaces
+      [data]="builderMarkdown | language : 'typescript'">
+  </markdown>
+</div>
+<form [formGroup]="myReactiveFormBuilder" (ngSubmit)="onSubmit()" class="w-full lg:w-3/4 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
 
   <div formGroupName="name">
-    <h2>Name</h2>
+    <h2 class="block text-gray-700 text-lg font-bold mb-2">Name</h2>
     <label class="block text-gray-700 text-sm font-bold mb-2" >
       Official Name:
       <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" formControlName="officialName">
@@ -85,3 +118,25 @@
 </form>
 
 <h3 class="text-2xl">Template-Driven Forms</h3>
+<div class="w-full lg:w-3/4 bg-white py-2 px-4 my-2 rounded">
+  <ul class="list-disc list-outside p-2">
+    <li class="my-2">
+      Suited for simple forms
+    </li>
+    <li class="mb-2">
+      Arguably a simpler syntax (similar to AngularJS)
+    </li>
+    <li class="mb-2">
+      Data model handled by ngModel & 2-way data-binding - ok if you know the shape of your form in advance
+    </li>
+    <li class="mb-2">
+      Asynchronous
+    </li>
+    <li class="mb-2">
+      Uses the FormsModule
+    </li>
+    <li class="mb-2">
+      Harder to test
+    </li>
+  </ul>
+</div>
