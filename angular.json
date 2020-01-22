@@ -26,8 +26,7 @@
             "styles": [
               "src/tailwind.scss",
               "src/styles.css",
-              "node_modules/prismjs/plugins/toolbar/prism-toolbar.css",
-              "node_modules/prismjs/themes/prism-okaidia.css"
+              "node_modules/prismjs/themes/prism-tomorrow.css"
             ],
             "scripts": [
               "node_modules/marked/lib/marked.js",
