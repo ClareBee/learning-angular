@@ -24,6 +24,25 @@ export class AppModule {
   background-color: theme(backgroundColor.background-dark);
   color: theme(colors.white);
 }`;
+  jsonConfig = ` // package.json scripts
+  {
+    "format:fix": "pretty-quick --staged",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "run-s format:fix lint"
+    }
+  }`;
+  prettierConfig = `// .prettierrc
+  {
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true,
+  "htmlWhitespaceSensitivity": "ignore"
+}
+`;
   constructor() {}
 
   ngOnInit() {}

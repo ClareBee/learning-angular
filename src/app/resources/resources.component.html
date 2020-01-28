@@ -60,6 +60,8 @@
   >
     Setting up Prettier in an Angular Project
   </a>
+  <markdown [data]="jsonConfig | language: 'json'"></markdown>
+
   <ul>
     <li class="content">Husky for a precommit hook</li>
     <li class="content">npm-run-all to run scripts in series with run-s</li>
@@ -75,9 +77,15 @@
       for painless autocorrections on staged fields (--staged)
     </li>
     <li class="content">
+      Ran into weirdness around spacing so switched off sensitivity here:
+    </li>
+    <li><markdown [data]="prettierConfig | language: 'yaml'"></markdown></li>
+
+    <li class="content">
       Ran into issues where rules conflicted, so ended up trying
-      tslint-config-prettier
+      tslint-config-prettier for diagnosis. Turns out I had conflicting
+      quotation rules with object-literal-sort-keys in TSLint and singleQuote in
+      Prettier!
     </li>
   </ul>
-  <markdown [data]="jsonConfig | language: 'json'"></markdown>
 </div>
