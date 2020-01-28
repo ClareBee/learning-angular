@@ -2,14 +2,10 @@ import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
 import { disableHover } from '../utils/utils';
-console.log('utils', disableHover)
+console.log('utils', disableHover);
 
 class Doggo {
- constructor(
-   public petName: string,
-   public officialName: string,
-   public rating?: number,
- ) {  }
+  constructor(public petName: string, public officialName: string, public rating?: number) {}
 }
 @Component({
   selector: 'app-forms',
@@ -19,7 +15,20 @@ class Doggo {
 export class FormsComponent implements OnInit {
   // properties for template form
   ratings = [...Array(10).keys()];
-
+  reactiveMarkdown = `myReactiveForm = new FormGroup({
+    rating: new FormControl(''),
+    name: new FormGroup({
+      officialName: new FormControl(''),
+      petName: new FormControl(''),
+    })
+  });`;
+  builderMarkdown = `myReactiveFormBuilder = this.myFormBuilder.group({
+    rating: [''],
+    name: this.myFormBuilder.group({
+      officialName: [''],
+      petName: [''],
+    })
+  });
   doggo = new Doggo('BooBoo', 'Buster', 8);
 
   submitted = false;
@@ -31,43 +40,27 @@ export class FormsComponent implements OnInit {
   }
 
   // TODO: for development, allows you to spy on submitted values
-  get diagnostic() { return JSON.stringify(this.doggo); }
+  get diagnostic() { return JSON.stringify(this.doggo);
 
-  reactiveMarkdown = `myReactiveForm = new FormGroup({
+constructor(private myFormBuilder: FormBuilder) { }`;
+  myReactiveForm = new FormGroup({
     rating: new FormControl(''),
     name: new FormGroup({
       officialName: new FormControl(''),
-      petName: new FormControl(''),
-    })
-  });`
-  builderMarkdown = `myReactiveFormBuilder = this.myFormBuilder.group({
-    rating: [''],
-    name: this.myFormBuilder.group({
-      officialName: [''],
-      petName: [''],
+      petName: new FormControl('')
     })
   });
-
-
-constructor(private myFormBuilder: FormBuilder) { }`
-  myReactiveForm = new FormGroup({
-      rating: new FormControl(''),
-      name: new FormGroup({
-        officialName: new FormControl(''),
-        petName: new FormControl(''),
-      })
-    });
 
   myReactiveFormBuilder = this.myFormBuilder.group({
     rating: [''],
     name: this.myFormBuilder.group({
       officialName: [''],
-      petName: [''],
+      petName: ['']
     })
   });
 
-  constructor(private myFormBuilder: FormBuilder){ }
-  ngOnInit(){
+  constructor(private myFormBuilder: FormBuilder) {}
+  ngOnInit() {
     disableHover();
   }
 }

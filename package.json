@@ -10,10 +10,13 @@
     "e2e": "ng e2e",
     "deploy-build": "ng build --prod --output-path docs --base-href /learning-angular/",
     "deploy": "ngh",
-    "format:fix": "pretty-quick --staged"
+    "format:fix": "pretty-quick --staged",
+    "tslint-check": "tslint-config-prettier-check ./tslint.json"
   },
   "husky": {
-    "pre-commit": "run-s format:fix lint"
+    "hooks": {
+      "pre-commit": "run-s format:fix lint"
+    }
   },
   "private": true,
   "dependencies": {
@@ -59,6 +62,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "~3.5.3"
   }
 }
