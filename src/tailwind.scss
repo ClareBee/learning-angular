@@ -39,7 +39,7 @@ mark {
   @apply bg-accent;
 }
 
-a:not(.nav, .content) {
+a:not(.nav) {
   @apply font-bold;
 
   &:visited {
