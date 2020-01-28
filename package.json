@@ -11,6 +11,10 @@
     "deploy-build": "ng build --prod --output-path docs --base-href /learning-angular/",
     "deploy": "ngh"
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.14",
@@ -48,6 +52,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "prettier": "^1.19.1",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
