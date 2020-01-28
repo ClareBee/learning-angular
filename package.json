@@ -13,10 +13,6 @@
     "format:fix": "pretty-quick --staged",
     "precommit": "run-s format:fix lint"
   },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.14",
