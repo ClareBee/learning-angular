@@ -13,7 +13,7 @@
     "format:fix": "pretty-quick --staged"
   },
   "husky": {
-    "precommit": "run-s format:fix lint"
+    "pre-commit": "run-s format:fix lint"
   },
   "private": true,
   "dependencies": {
