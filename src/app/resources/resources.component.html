@@ -2,41 +2,82 @@
 <hr class="bg-accent h-1 w-full mb-4" />
 <div class="inline-block my-2 w-full">
   <h2 class="text-xl">Active Link</h2>
-  <hr class="bg-secondary h-1 w-full mb-4" />
-
+  <hr class="bg-secondary h-1 w-fugit ll mb-4" />
   <p>
-    If you have a root - '/' - route, it will always be active unless you add the following to the element with the routerLink
+    If you have a root - '/' - route, it will always be active unless you add
+    the following to the element with the routerLink
   </p>
   <markdown [data]="routerLink | language: 'typescript'"></markdown>
 </div>
 <div class="inline-block my-4 w-full">
   <h2 class="text-xl">Tailwind CSS</h2>
   <hr class="bg-secondary h-1 w-full mb-4" />
-  https://tailwindcss.com/
-  <p>https://dev.to/beavearony/building-tailwind-css-in-an-angular-cli-project-e04</p>
+  <a href="https://tailwindcss.com/">Tailwind CSS</a>
   <p>
-    If you extend the palette in tailwind.config.js, access the colours using dot notation in your scss file
+    https://dev.to/beavearony/building-tailwind-css-in-an-angular-cli-project-e04
+  </p>
+  <p>
+    If you extend the palette in tailwind.config.js, access the colours using
+    dot notation in your scss file
   </p>
   <markdown [data]="cssSnippet | language: 'css'"></markdown>
 </div>
 <div class="inline-block my-2 w-full">
   <h2 class="text-xl">PageScroll Directive</h2>
   <hr class="bg-secondary h-1 w-full mb-4" />
-  <p>'Animated scrolling functionality for angular written in TypeScript' - https://github.com/Nolanus/ngx-page-scroll
-  <markdown [data]="pageScroll | language: 'javascript'"></markdown>
   <p>
-    Disable hover (& other pointer events) on scroll to improve performance
+    'Animated scrolling functionality for angular written in TypeScript' -
+    https://github.com/Nolanus/ngx-page-scroll
+    <markdown [data]="pageScroll | language: 'javascript'"></markdown>
   </p>
-  <a href="https://www.thecssninja.com/javascript/pointer-events-60fps">The CSS Ninja Blog Post</a>
+
+  <p>Disable hover (& other pointer events) on scroll to improve performance</p>
+  <a href="https://www.thecssninja.com/javascript/pointer-events-60fps">
+    The CSS Ninja Blog Post
+  </a>
 </div>
 <div class="inline-block my-2 w-full">
-  <h2 class="text-xl">Prisma.js</h2>
+  <h2 class="text-xl">Prism.js</h2>
   <hr class="bg-secondary h-1 w-full mb-4" />
-  Access the markdown via a template-literal class property to avoid having to escape characters
-
+  <p>
+    Access the markdown via a template-literal class property to avoid having to
+    escape characters
+  </p>
 </div>
 <div class="inline-block my-2 w-full">
   <h2 class="text-xl">Ngx Markdown</h2>
   <hr class="bg-secondary h-1 w-full mb-4" />
-  https://github.com/jfcere/ngx-markdown
+  <p>https://github.com/jfcere/ngx-markdown</p>
+</div>
+<div class="inline-block my-2 w-full">
+  <h2 class="text-xl">Prettier & TSLint via Husky hooks!</h2>
+  <hr class="bg-secondary h-1 w-full mb-4" />
+  <p>Followed this helpful article on Medium</p>
+  <a
+    href="https://medium.com/@victormejia/setting-up-prettier-in-an-angular-cli-project-2f50c3b9a537"
+    target="_blank"
+    rel="noopener norereferrer"
+  >
+    Setting up Prettier in an Angular Project
+  </a>
+  <ul>
+    <li class="content">Husky for a precommit hook</li>
+    <li class="content">npm-run-all to run scripts in series with run-s</li>
+    <li class="content">.prettierrc for Prettier rules</li>
+    <li class="content">
+      <a
+        href="https://github.com/azz/pretty-quick"
+        target="blank"
+        rel="noopenner noreferrer"
+      >
+        pretty-quick
+      </a>
+      for painless autocorrections on staged fields (--staged)
+    </li>
+    <li class="content">
+      Ran into issues where rules conflicted, so ended up trying
+      tslint-config-prettier
+    </li>
+  </ul>
+  <markdown [data]="jsonConfig | language: 'json'"></markdown>
 </div>
