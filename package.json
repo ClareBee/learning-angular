@@ -10,7 +10,9 @@
     "e2e": "ng e2e",
     "deploy-build": "ng build --prod --output-path docs --base-href /learning-angular/",
     "deploy": "ngh",
-    "format:fix": "pretty-quick --staged",
+    "format:fix": "pretty-quick --staged"
+  },
+  "husky": {
     "precommit": "run-s format:fix lint"
   },
   "private": true,
