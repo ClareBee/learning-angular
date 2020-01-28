@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .active {
-  @apply bg-background-dark;
+  @apply bg-backgroundDark;
   @apply text-white;
 }
 
@@ -36,7 +36,7 @@ mark {
   display: inline-block;
   line-height: 0rem;
   padding-bottom: 0.65rem;
-  @apply bg-accent;
+  @apply bg-accentLight;
 }
 
 a:not(.nav) {

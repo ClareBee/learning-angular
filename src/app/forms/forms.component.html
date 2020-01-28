@@ -1,13 +1,62 @@
 <h1 id="top" class="text-3xl">Forms</h1>
 <hr class="bg-accent h-1 w-full mb-4" />
 <h4 class="text-lg text-secondary font-bold">Contents:</h4>
-<a pageScroll [pageScrollDuration]="1000" href="#reactive-forms" class="content block my-1 p-1 hover:bg-white">Reactive Forms</a>
-<a pageScroll [pageScrollDuration]="1000" href="#form-group" class="content block my-1 p-1 hover:bg-white">FormGroup & FormControl</a>
-<a pageScroll [pageScrollDuration]="1000" href="#form-builder" class="content block my-1 p-1 hover:bg-white">FormBuilder</a>
-<a pageScroll [pageScrollDuration]="1000" href="#validation" class="content block my-1 p-1 hover:bg-white">Validation</a>
-<a pageScroll [pageScrollDuration]="1000" href="#tests" class="content block my-1 p-1 hover:bg-white">Tests</a>
-<a pageScroll [pageScrollDuration]="1000" href="#template" class="content block my-1 p-1 hover:bg-white">Template Forms</a>
-<a pageScroll [pageScrollDuration]="1000" href="#section1" class="content block my-1 p-1 hover:bg-white">FormGroup & FormControl</a>
+<a
+  pageScroll
+  [pageScrollDuration]="1000"
+  href="#reactive-forms"
+  class="content block my-1 p-1 hover:bg-white"
+>
+  Reactive Forms
+</a>
+<a
+  pageScroll
+  [pageScrollDuration]="1000"
+  href="#form-group"
+  class="content block my-1 p-1 hover:bg-white"
+>
+  FormGroup & FormControl
+</a>
+<a
+  pageScroll
+  [pageScrollDuration]="1000"
+  href="#form-builder"
+  class="content block my-1 p-1 hover:bg-white"
+>
+  FormBuilder
+</a>
+<a
+  pageScroll
+  [pageScrollDuration]="1000"
+  href="#validation"
+  class="content block my-1 p-1 hover:bg-white"
+>
+  Validation
+</a>
+<a
+  pageScroll
+  [pageScrollDuration]="1000"
+  href="#tests"
+  class="content block my-1 p-1 hover:bg-white"
+>
+  Tests
+</a>
+<a
+  pageScroll
+  [pageScrollDuration]="1000"
+  href="#template"
+  class="content block my-1 p-1 hover:bg-white"
+>
+  Template Forms
+</a>
+<a
+  pageScroll
+  [pageScrollDuration]="1000"
+  href="#section1"
+  class="content block my-1 p-1 hover:bg-white"
+>
+  FormGroup & FormControl
+</a>
 
 <h3 id="reactive-forms" class="text-2xl mt-4">Reactive Forms</h3>
 <hr class="bg-primary h-1 w-full mb-4" />
@@ -19,11 +68,20 @@
       Suited for complex/dynamic forms -> reactive updates -> better UX
     </li>
     <li class="mb-2 bullet">
-      Uses observables/functional-style <mark>ReactiveFormsModule</mark> (import from '@angular/forms' & add to app.module.ts imports array)
-      <a href="https://angular.io/api/forms/ReactiveFormsModule" target="_blank" rel="noopener noreferrer">ReactiveFormsModule</a>
+      Uses observables/functional-style
+      <mark>ReactiveFormsModule</mark>
+      (import from '@angular/forms' & add to app.module.ts imports array)
+      <a
+        href="https://angular.io/api/forms/ReactiveFormsModule"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ReactiveFormsModule
+      </a>
     </li>
     <li class="mb-2 bullet">
-      Logic resides in component, rather than in template -> easier to see (not obscured by CSS classes, HTML attributes etc.)
+      Logic resides in component, rather than in template -> easier to see (not
+      obscured by CSS classes, HTML attributes etc.)
     </li>
     <li class="mb-2 bullet">
       Synchronous, so no need to check what exists before validating
@@ -33,7 +91,14 @@
     </li>
   </ul>
 </div>
-<a pageScroll [pageScrollDuration]="1000" href="#top" class="inline-block my-1 mb-4 p-1 bg-background-dark text-white">To Top</a>
+<a
+  pageScroll
+  [pageScrollDuration]="1000"
+  href="#top"
+  class="inline-block my-1 mb-4 p-1 bg-backgroundDark text-white"
+>
+  To Top
+</a>
 
 <h4 id="form-group" class="text-xl">With FormGroup & FormControl</h4>
 <hr class="bg-secondary h-1 w-full mb-4" />
@@ -41,19 +106,28 @@
 <div class="w-full bg-white py-2 px-4 my-2 rounded">
   <ul class="list-none list-outside p-2">
     <li class="my-2 bullet">
-      Import <mark>FormGroup</mark>, <mark>FormControl</mark> from '@angular/forms' into your specific component.ts
+      Import
+      <mark>FormGroup</mark>
+      ,
+      <mark>FormControl</mark>
+      from '@angular/forms' into your specific component.ts
     </li>
     <li class="mb-2 bullet">
-      <mark>[formGroup]</mark> = directive that connects form to component
+      <mark>[formGroup]</mark>
+      = directive that connects form to component
     </li>
     <li class="mb-2 bullet">
-      <mark>formGroup</mark> = directive that groups nested values inside overall form
+      <mark>formGroup</mark>
+      = directive that groups nested values inside overall form
     </li>
     <li class="mb-2 bullet">
-      <mark>formControlName</mark> = directives that bind inputs to form controls defined inside FormGroup & communicate changes
+      <mark>formControlName</mark>
+      = directives that bind inputs to form controls defined inside FormGroup &
+      communicate changes
     </li>
     <li class="mb-2 bullet">
-      <mark>(ngSubmit)</mark> = event listener w callback method
+      <mark>(ngSubmit)</mark>
+      = event listener w callback method
     </li>
     <li class="mb-2 bullet">
       Button of type submit = triggers submission
@@ -62,33 +136,61 @@
 </div>
 <div class="w-full my-2">
   <markdown
-      ngPreserveWhitespaces
-      [data]="reactiveMarkdown | language : 'typescript'">
-  </markdown>
+    ngPreserveWhitespaces
+    [data]="reactiveMarkdown | language: 'typescript'"
+  ></markdown>
 </div>
-<form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()" class="w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-
+<form
+  [formGroup]="myReactiveForm"
+  (ngSubmit)="onSubmit()"
+  class="w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+>
   <div formGroupName="name">
     <h2 class="block text-gray-700 text-lg font-bold mb-2">Name</h2>
-    <label class="block text-gray-700 text-sm font-bold mb-2" >
+    <label class="block text-gray-700 text-sm font-bold mb-2">
       Official Name:
-      <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" formControlName="officialName">
+      <input
+        class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+        type="text"
+        formControlName="officialName"
+      />
     </label>
-    <label class="block text-gray-700 text-sm font-bold mb-2" >
+    <label class="block text-gray-700 text-sm font-bold mb-2">
       Pet Name:
-      <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" formControlName="petName">
+      <input
+        class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+        type="text"
+        formControlName="petName"
+      />
     </label>
   </div>
   <h2 class="block text-gray-700 text-lg font-bold mb-2">Rating</h2>
 
-  <label class="block text-gray-700 text-sm font-bold mb-2" >
+  <label class="block text-gray-700 text-sm font-bold mb-2">
     Mark out of 10
-  <input type="number" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" formControlName="rating">
+    <input
+      type="number"
+      class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+      type="text"
+      formControlName="rating"
+    />
   </label>
-  <button class="bg-primary hover:bg-accent text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" [disabled]="!myReactiveForm.valid">Submit</button>
-
+  <button
+    class="bg-primary hover:bg-accent text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+    type="submit"
+    [disabled]="!myReactiveForm.valid"
+  >
+    Submit
+  </button>
 </form>
-<a pageScroll [pageScrollDuration]="1000" href="#top" class="inline-block my-1 mb-4 p-1 bg-background-dark text-white">To Top</a>
+<a
+  pageScroll
+  [pageScrollDuration]="1000"
+  href="#top"
+  class="inline-block my-1 mb-4 p-1 bg-backgroundDark text-white"
+>
+  To Top
+</a>
 
 <h4 id="form-builder" class="text-xl">With FormBuilder</h4>
 <hr class="bg-secondary h-1 w-full mb-4" />
@@ -96,86 +198,164 @@
 <div class="w-full bg-white py-2 px-4 my-2">
   <ul class="list-disc list-outside p-2">
     <li class="my-2 bullet">
-      <mark>FormBuilder</mark> - injectable service providing factory methods for creating control instances (shorthand)
+      <mark>FormBuilder</mark>
+      - injectable service providing factory methods for creating control
+      instances (shorthand)
     </li>
     <li class="mb-2 bullet">
-      Import FormBuilder from '@angular/forms' & inject into contructor prefixed by 'private' to create & initialize
+      Import FormBuilder from '@angular/forms' & inject into contructor prefixed
+      by 'private' to create & initialize
     </li>
   </ul>
 </div>
 <div class="w-full my-2 rounded">
   <markdown
-      ngPreserveWhitespaces
-      [data]="builderMarkdown | language : 'typescript'">
-  </markdown>
+    ngPreserveWhitespaces
+    [data]="builderMarkdown | language: 'typescript'"
+  ></markdown>
 </div>
-<form [formGroup]="myReactiveFormBuilder" (ngSubmit)="onSubmit()" class="w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-
+<form
+  [formGroup]="myReactiveFormBuilder"
+  (ngSubmit)="onSubmit()"
+  class="w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+>
   <div formGroupName="name">
     <h2 class="block text-gray-700 text-lg font-bold mb-2">Name</h2>
-    <label class="block text-gray-700 text-sm font-bold mb-2" >
+    <label class="block text-gray-700 text-sm font-bold mb-2">
       Official Name:
-      <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" formControlName="officialName">
+      <input
+        class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+        type="text"
+        formControlName="officialName"
+      />
     </label>
-    <label class="block text-gray-700 text-sm font-bold mb-2" >
+    <label class="block text-gray-700 text-sm font-bold mb-2">
       Pet Name:
-      <input class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" formControlName="petName">
+      <input
+        class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+        type="text"
+        formControlName="petName"
+      />
     </label>
   </div>
   <h2 class="block text-gray-700 text-lg font-bold mb-2">Rating</h2>
 
-  <label class="block text-gray-700 text-sm font-bold mb-2" >
+  <label class="block text-gray-700 text-sm font-bold mb-2">
     Marks out of 10
-  <input type="number" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" type="text" formControlName="rating">
+    <input
+      type="number"
+      class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+      type="text"
+      formControlName="rating"
+    />
   </label>
-  <button class="bg-primary hover:bg-accent text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" [disabled]="!myReactiveForm.valid">Submit</button>
-
+  <button
+    class="bg-primary hover:bg-accent text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+    type="submit"
+    [disabled]="!myReactiveForm.valid"
+  >
+    Submit
+  </button>
 </form>
-<a pageScroll [pageScrollDuration]="1000" href="#top" class="inline-block my-1 mb-4 p-1 bg-background-dark text-white">To Top</a>
+<a
+  pageScroll
+  [pageScrollDuration]="1000"
+  href="#top"
+  class="inline-block my-1 mb-4 p-1 bg-backgroundDark text-white"
+>
+  To Top
+</a>
 
 <h4 id="validation" class="text-xl">Validation</h4>
 <hr class="bg-secondary h-1 w-full mb-4" />
 <div>
-  <p class="content">You can track the state of your form with formName.status</p>
-  <p class="content">Angular has special css classes that change along with the status</p>
-    <table class="text-left w-full border-collapse"> <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
-      <thead>
-        <tr>
-          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">Status</th>
-          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">If True</th>
-          <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light">If False</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="hover:bg-grey-lighter">
-          <td class="py-4 px-6 border-b border-grey-light">Control has been visited</td>
-          <td class="py-4 px-6 border-b border-grey-light">
-            <p class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark">ng-touched</p>
-          </td>
-          <td class="py-4 px-6 border-b border-grey-light">
-            <p class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark">ng-untouched</p>
-          </td>
-        </tr>
-        <tr class="hover:bg-grey-lighter">
-          <td class="py-4 px-6 border-b border-grey-light">Control value has changed</td>
-          <td class="py-4 px-6 border-b border-grey-light">
-            <p class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark">ng-dirty</p>
-          </td>
-          <td class="py-4 px-6 border-b border-grey-light">
-            <p class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark">ng-pristine</p>
-          </td>
-        </tr>
-        <tr class="hover:bg-grey-lighter">
-          <td class="py-4 px-6 border-b border-grey-light">Control value is valid </td>
-          <td class="py-4 px-6 border-b border-grey-light">
-            <p class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark">ng-valid</p>
-          </td>
-          <td class="py-4 px-6 border-b border-grey-light">
-            <p class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark">ng-invalid</p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <p class="content">
+    You can track the state of your form with formName.status
+  </p>
+  <p class="content">
+    Angular has special css classes that change along with the status
+  </p>
+  <table class="text-left w-full border-collapse">
+    <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
+    <thead>
+      <tr>
+        <th
+          class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light"
+        >
+          Status
+        </th>
+        <th
+          class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light"
+        >
+          If True
+        </th>
+        <th
+          class="py-4 px-6 bg-grey-lightest font-bold uppercase text-sm text-grey-dark border-b border-grey-light"
+        >
+          If False
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="hover:bg-grey-lighter">
+        <td class="py-4 px-6 border-b border-grey-light">
+          Control has been visited
+        </td>
+        <td class="py-4 px-6 border-b border-grey-light">
+          <p
+            class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark"
+          >
+            ng-touched
+          </p>
+        </td>
+        <td class="py-4 px-6 border-b border-grey-light">
+          <p
+            class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark"
+          >
+            ng-untouched
+          </p>
+        </td>
+      </tr>
+      <tr class="hover:bg-grey-lighter">
+        <td class="py-4 px-6 border-b border-grey-light">
+          Control value has changed
+        </td>
+        <td class="py-4 px-6 border-b border-grey-light">
+          <p
+            class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark"
+          >
+            ng-dirty
+          </p>
+        </td>
+        <td class="py-4 px-6 border-b border-grey-light">
+          <p
+            class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark"
+          >
+            ng-pristine
+          </p>
+        </td>
+      </tr>
+      <tr class="hover:bg-grey-lighter">
+        <td class="py-4 px-6 border-b border-grey-light">
+          Control value is valid
+        </td>
+        <td class="py-4 px-6 border-b border-grey-light">
+          <p
+            class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-green hover:bg-green-dark"
+          >
+            ng-valid
+          </p>
+        </td>
+        <td class="py-4 px-6 border-b border-grey-light">
+          <p
+            class="text-grey-lighter font-bold py-1 px-3 rounded text-xs bg-blue hover:bg-blue-dark"
+          >
+            ng-invalid
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <h4 id="tests" class="text-xl">Tests</h4>
@@ -194,51 +374,106 @@
       Arguably a simpler syntax (similar to AngularJS)
     </li>
     <li class="mb-2 bullet">
-      Data model handled by <mark>#formName="ngForm"</mark>,<mark>(ngSubmit)="onSubmit()"</mark>, and <mark>[(ngModel)]</mark> & 2-way data-binding -  for reading and writing input-control values - ok if you know the shape of your form in advance
+      Data model handled by
+      <mark>#formName="ngForm"</mark>
+      ,
+      <mark>(ngSubmit)="onSubmit()"</mark>
+      , and
+      <mark>[(ngModel)]</mark>
+      & 2-way data-binding - for reading and writing input-control values - ok
+      if you know the shape of your form in advance
     </li>
     <li class="mb-2 bullet">
       Asynchronous
     </li>
     <li class="mb-2 bullet">
-      Uses the <mark>FormsModule</mark> (import into app.module.ts)
+      Uses the
+      <mark>FormsModule</mark>
+      (import into app.module.ts)
     </li>
     <li class="mb-2 bullet">
       Harder to test
     </li>
   </ul>
 </div>
-<a pageScroll [pageScrollDuration]="1000" href="#top" class="inline-block my-1 mb-4 p-1 bg-background-dark text-white">To Top</a>
+<a
+  pageScroll
+  [pageScrollDuration]="1000"
+  href="#top"
+  class="inline-block my-1 mb-4 p-1 bg-backgroundDark text-white"
+>
+  To Top
+</a>
 <markdown src="../assets/templateForm.html"></markdown>
 
 <div [hidden]="submitted">
-  <form #doggoForm="ngForm" (ngSubmit)="onSubmit()" class="w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+  <form
+    #doggoForm="ngForm"
+    (ngSubmit)="onSubmit()"
+    class="w-full bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+  >
     <!-- pet name -->
     <div>
-      <label for="petName" class="block text-gray-700 text-sm font-bold mb-2">Pet Name</label>
-      <input type="text" class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" id="petName"
-             required
-             [(ngModel)]="doggo.petName" name="petName" #petName="ngModel">
-      <div [hidden]="petName.valid || petName.pristine"
-          class="bg-secondary text-white">
-       Name is required
-     </div>
+      <label for="petName" class="block text-gray-700 text-sm font-bold mb-2">
+        Pet Name
+      </label>
+      <input
+        type="text"
+        class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+        id="petName"
+        required
+        [(ngModel)]="doggo.petName"
+        name="petName"
+        #petName="ngModel"
+      />
+      <div
+        [hidden]="petName.valid || petName.pristine"
+        class="bg-secondary text-white"
+      >
+        Name is required
+      </div>
     </div>
     <!-- official name -->
     <div>
-      <label for="officialName" class="block text-gray-700 text-sm font-bold mb-2">Official Name</label>
-      <input type="text"  class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" id="officialName"
-             [(ngModel)]="doggo.officialName" name="officialName">
+      <label
+        for="officialName"
+        class="block text-gray-700 text-sm font-bold mb-2"
+      >
+        Official Name
+      </label>
+      <input
+        type="text"
+        class="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+        id="officialName"
+        [(ngModel)]="doggo.officialName"
+        name="officialName"
+      />
     </div>
     <!-- rating -->
     <div>
-      <label for="rating" class="block text-gray-700 text-sm font-bold mb-2">Rating</label>
-      <select class="form-control"  class="bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal" id="rating"
-              required
-              [(ngModel)]="doggo.rating" name="rating">
-        <option *ngFor="let rating of ratings" [value]="rating">{{rating}}</option>
+      <label for="rating" class="block text-gray-700 text-sm font-bold mb-2">
+        Rating
+      </label>
+      <select
+        class="form-control"
+        class="bg-white focus:outline-none border border-gray-300 rounded-lg py-2 px-4 block w-full appearance-none leading-normal"
+        id="rating"
+        required
+        [(ngModel)]="doggo.rating"
+        name="rating"
+      >
+        <option *ngFor="let rating of ratings" [value]="rating">
+          {{ rating }}
+        </option>
       </select>
     </div>
-    <button class="bg-primary hover:bg-accent text-white font-bold my-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" [disabled]="!doggoForm.form.valid">Submit</button>
+    <button
+      class="bg-primary hover:bg-accent text-white font-bold my-2 py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      type="submit"
+      [disabled]="!doggoForm.form.valid"
+    >
+      Submit
+    </button>
   </form>
 </div>
 
@@ -250,14 +485,21 @@
   </div>
   <div>
     <div class="block text-gray-700 text-sm font-bold mb-2">Official Name</div>
-    <div class="block text-dark text-md my-2 bg-white">{{ doggo.officialName }}</div>
+    <div class="block text-dark text-md my-2 bg-white">
+      {{ doggo.officialName }}
+    </div>
   </div>
   <div>
     <div class="block text-gray-700 text-sm font-bold mb-2">Rating</div>
     <div class="block text-dark text-md my-2 bg-white">{{ doggo.rating }}</div>
   </div>
-  <br>
-  <button class="bg-secondary hover:bg-accent text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" (click)="submitted=false">Edit</button>
+  <br />
+  <button
+    class="bg-secondary hover:bg-accent text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+    (click)="submitted = false"
+  >
+    Edit
+  </button>
 </div>
 
 <h3 id="template-forms" class="text-2xl">Validation</h3>
