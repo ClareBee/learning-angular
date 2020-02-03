@@ -40,6 +40,9 @@ const squareOdd = of(1, 2, 3, 4, 5)
 
 // Subscribe to get values
 squareOdd.subscribe(x => console.log(x));`;
+  creationMarkdown = `import { interval } from 'rxjs';
+
+const observable = interval(1000 /* number of milliseconds */);`;
   catchErrorMarkdown = `import { ajax } from 'rxjs/ajax';
 import { map, catchError } from 'rxjs/operators';
 // Return "response" from the API. If an error happens,
@@ -59,6 +62,15 @@ apiData.subscribe({
   error(err) { console.log('errors already caught... will not run'); }
 });`;
   retryMarkdown = `retry(3), // Retry up to 3 times before failing`;
+  customMarkdown = `import { pipe } from 'rxjs';
+import { filter, map } from 'rxjs';
+
+function discardOddDoubleEven() {
+  return pipe(
+    filter(v => ! (v % 2)),
+    map(v => v + v),
+  );
+}`;
 
   ngOnInit() {}
 }

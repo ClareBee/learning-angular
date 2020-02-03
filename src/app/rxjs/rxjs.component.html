@@ -2,7 +2,8 @@
 <hr class="bg-accent h-1 w-full mb-4" />
 
 <mark>All code examples on this page are from the official Angular docs</mark>
-
+Angular Docs: https://angular.io/guide/rx-library RxJS Docs:
+https://rxjs-dev.firebaseapp.com/
 <h2 class="text-2xl mt-4">Reactive programming w RxJS & Observables</h2>
 <hr class="bg-primary h-1 w-full mb-4" />
 
@@ -38,15 +39,22 @@
   </ul>
 </div>
 <p>
-  An Observable instance begins publishing values
+  An Observable instance begins publishing values (a
+  <mark>PUSH</mark>
+  system - cf Promises but lazy execution/can return multiple values over time)
   <mark>only when someone subscribes to it</mark>
   i.e. by calling the subscribe() method of the instance & passing an observer
   object to receive the notifications.
+  <mark>
+    "Subscribing to an Observable is analogous to calling a Function."
+  </mark>
+  - RxJS docs. - you can also unsubscribe() to cancel ongoing execution
 </p>
 
 <p class="mt-2">From docs:</p>
 <div class="w-full bg-white py-2 px-4 my-2 rounded">
   <ul class="list-none list-outside p-2">
+    <li class="content">Using pure functions vs mutations</li>
     <li class="content">
       Converting existing code for async operations into observables
     </li>
@@ -99,7 +107,25 @@
   filter(), concat(), and flatMap().
 </p>
 <markdown [data]="observablePipeMarkdown | language: 'javascript'"></markdown>
+OR - distinct from pipeable operators - there are also creation operators, e.g.
+'interval()'
+<markdown [data]="creationMarkdown | language: 'javascript'"></markdown>
 
+Many operators on offer! See
+<a
+  src="https://rxjs-dev.firebaseapp.com/guide/operators"
+  target="_blank"
+  rel="noopenner noreferrer"
+>
+  https://rxjs-dev.firebaseapp.com/guide/operators
+</a>
+<div class="bg-white py-2 px-4 my-2 round">
+  <p>
+    Creation/Join Creation/Transformation/Filtering/Join/Multi-casting/Error
+    Handling/Utility/Conditional/Mathematical/Custom
+  </p>
+</div>
+<markdown [data]="customMarkdown | language: 'javascript'"></markdown>
 <h2 class="text-2xl mt-4">Error Handling</h2>
 <hr class="bg-secondary h-1 w-full mb-4" />
 
