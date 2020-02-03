@@ -90,6 +90,21 @@
 <h1 class="text-3xl mt-2">Accessibility in Angular</h1>
 <hr class="bg-primary h-1 w-full mb-4" />
 <div class="inline-block my-2 w-full">
+  Accessibility Linting with
+  <mark>codelyzer</mark>
+  -
+  <a
+    src="https://web.dev/accessible-angular-with-codelyzer/"
+    target="_blank"
+    rel="no-openner noreferrer"
+  >
+    https://web.dev/accessible-angular-with-codelyzer/
+  </a>
+</div>
+&
+<a src="http://codelyzer.com/rules/">codelyzer rules</a>
+with TSLint
+<div class="inline-block my-2 w-full">
   <h2 class="text-xl">Accessibility Attributes</h2>
   <hr class="bg-secondary h-1 w-full mb-4" />
 
@@ -117,7 +132,103 @@
   <p>Static ARIA attributes don't need this:</p>
   <markdown [data]="staticAriaMarkdown | language: 'html'"></markdown>
 </div>
+<div class="inline-block my-2 w-full">
+  <h2 class="text-xl">Material UI & A11y</h2>
+  <hr class="bg-secondary h-1 w-full mb-4" />
 
-<h2 class="text-xl">Focus</h2>
+  <p>
+    <mark>MaterialUI:</mark>
+    ships with
+    <a
+      src="https://material.angular.io/cdk/a11y/overview"
+      target="_blank"
+      rel="noopenner noreferrer"
+    >
+      https://material.angular.io/cdk/a11y/overview
+    </a>
+  </p>
+</div>
 
-<h2 class="text-xl">Color Contrast</h2>
+<div class="inline-block my-2 w-full">
+  <h2 class="text-xl">Focus</h2>
+  <hr class="bg-secondary h-1 w-full mb-4" />
+  From the
+  <a
+    src="https://angular.io/guide/accessibility"
+    target="_blank"
+    rel="noopenner noreferrer"
+  >
+    Angular Docs
+  </a>
+  :
+
+  <div class="my-2 p-2 bg-white">
+    <ul>
+      <li class="content">
+        When using Angular routing, you should decide where page focus goes upon
+        navigation.
+      </li>
+      <li class="content">
+        To avoid relying solely on visual cues, you need to make sure your
+        routing code updates focus after page navigation.
+      </li>
+      <li class="content">
+        Use the NavigationEnd event from the Router service to know when to
+        update focus.
+      </li>
+    </ul>
+  </div>
+
+  <markdown [data]="routesMarkdown | language: 'javascript'"></markdown>
+</div>
+<div class="inline-block my-2 w-full">
+  <h2 class="text-xl">Color Contrast</h2>
+  <hr class="bg-secondary h-1 w-full mb-4" />
+  <p>
+    Checking colour contrast with
+    <a
+      src="https://webaim.org/resources/contrastchecker/"
+      target="_blank"
+      rel="no-openner noreferrer"
+    >
+      WebAIM tool
+    </a>
+    and
+    <a
+      src="https://webaim.org/articles/contrast/"
+      target="_blank"
+      rel="no-openner noreferrer"
+    >
+      success criteria
+    </a>
+  </p>
+  <table class="table-auto my-4 bg-white rounded">
+    <caption>background/foreground ratio</caption>
+    <thead>
+      <tr>
+        <th class="px-4 py-2"></th>
+        <th class="px-4 py-2">AA rating</th>
+        <th class="px-4 py-2">AAA rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border px-4 py-2">Body Text:</td>
+        <td class="border px-4 py-2">4.5:1</td>
+        <td class="border px-4 py-2">7:1</td>
+      </tr>
+      <tr class="bg-gray-100">
+        <td class="border px-4 py-2">
+          Larger Text (120-150% larger than body:
+        </td>
+        <td class="border px-4 py-2">3:1</td>
+        <td class="border px-4 py-2">4.5:1</td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">Components/icons/graphs:</td>
+        <td class="border px-4 py-2">3:1</td>
+        <td class="border px-4 py-2">n/a</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

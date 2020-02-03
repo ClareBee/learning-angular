@@ -12,5 +12,11 @@ export class AccessibilityComponent implements OnInit {
   staticAriaMarkdown = `
   <!-- Static ARIA attributes require no extra syntax -->
   <button aria-label="Save document">...</button>`;
+  routesMarkdown = `router.events.pipe(filter(e => e instanceof NavigationEnd)).subscribe(() => {
+const mainHeader = document.querySelector('#main-content-header')
+if (mainHeader) {
+mainHeader.focus();
+}
+});`;
   ngOnInit() {}
 }
