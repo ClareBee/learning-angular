@@ -8,21 +8,21 @@ import { Component, OnInit } from '@angular/core';
 export class ResourcesComponent implements OnInit {
   routerLink = `<a routerLink="/" [routerLinkActiveOptions]="{ exact: true }">Home</a>`
   pageScroll = `ngx i ngx-page-scroll --save
-  
+
 // in app.module.ts
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 
 @NgModule({
-    imports: [
-        /* Other imports here */
-        NgxPageScrollModule
-        ]
+  imports: [
+      /* Other imports here */
+      NgxPageScrollModule
+  ]
 })
 export class AppModule {
 }`;
   cssSnippet = `.active {
     background-color: theme(backgroundColor.background-dark);
-    color: theme(colors.white);
+    color: theme(textColor.white);
   }
 `
   constructor() { }
