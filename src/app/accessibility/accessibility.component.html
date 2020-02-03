@@ -1,0 +1,234 @@
+<h1 id="top" class="text-3xl">Accessibility</h1>
+<hr class="bg-accent h-1 w-full mb-4" />
+
+<div class="inline-block my-2 w-full">
+  <h2 class="text-xl">Diversity of Abilities</h2>
+  <hr class="bg-secondary h-1 w-full mb-4" />
+
+  <a
+    src="https://www.w3.org/WAI/people-use-web/abilities-barriers/"
+    target="_blank"
+    rel="noopenner noreferrer"
+  >
+    w3 resources on
+    <mark>WAI</mark>
+    - Web Accessibility Initiative
+  </a>
+  <ul class=" bg-white py-2 px-4 my-2 rounded">
+    <li class="content">Auditory</li>
+    <li class="content">Cognitive, Learning & Neurological</li>
+    <li class="content">Physical/Motor disabilities</li>
+    <li class="content">Speech</li>
+    <li class="content">Visual</li>
+  </ul>
+</div>
+
+<div class="inline-block my-2 w-full">
+  <h2 class="text-xl">The A11y Project</h2>
+  <hr class="bg-secondary h-1 w-full mb-4" />
+
+  <a src="https://a11yproject.com/" rel="noopenner noreferrer" target="_blank">
+    https://a11yproject.com/
+  </a>
+</div>
+
+<div class="inline-block my-2 w-full">
+  <h2 class="text-xl">WebAIM Checklist</h2>
+  <hr class="bg-secondary h-1 w-full mb-4" />
+
+  <p>Web Accessibility in Mind</p>
+  <a
+    src="https://webaim.org/standards/wcag/checklist"
+    rel="noopenner noreferrer"
+    target="_blank"
+  >
+    https://webaim.org/standards/wcag/checklist
+  </a>
+</div>
+
+<div class="inline-block my-2 w-full">
+  <h2 class="text-xl">Web Content Accessibility Guidelines</h2>
+  <hr class="bg-secondary h-1 w-full mb-4" />
+
+  <a
+    src="https://developers.google.com/web/fundamentals/accessibility/#what_is_accessibility"
+    rel="noopener noreferrer"
+  >
+    https://developers.google.com/web/fundamentals/accessibility/#what_is_accessibility
+  </a>
+</div>
+
+<h1 class="text-3xl mt-2">POUR principles:</h1>
+<hr class="bg-primary h-1 w-full mb-4" />
+<div class="inline-block w-full bg-white py-2 px-4 my-2 rounded">
+  <ul>
+    <li class="content">
+      <mark><strong>Perceivable:</strong></mark>
+      Can users perceive the content? This helps us keep in mind that just
+      because something is perceivable with one sense, such as sight, that
+      doesn't mean that all users can perceive it.
+    </li>
+    <li class="content">
+      <mark><strong>Operable:</strong></mark>
+      Can users use UI components and navigate the content? For example,
+      something that requires a hover interaction cannot be operated by someone
+      who can't use a mouse or touch screen.
+    </li>
+    <li class="content">
+      <mark><strong>Understandable:</strong></mark>
+      Can users understand the content? Can users understand the interface and
+      is it consistent enough to avoid confusion?
+    </li>
+    <li class="content">
+      <mark><strong>Robust:</strong></mark>
+      Can the content be consumed by a wide variety of user agents (browsers)?
+      Does it work with assistive technology?
+    </li>
+  </ul>
+</div>
+
+<h1 class="text-3xl mt-2">Accessibility in Angular</h1>
+<hr class="bg-primary h-1 w-full mb-4" />
+<div class="inline-block my-2 w-full">
+  Accessibility Linting with
+  <mark>codelyzer</mark>
+  -
+  <a
+    src="https://web.dev/accessible-angular-with-codelyzer/"
+    target="_blank"
+    rel="noopenner noreferrer"
+  >
+    https://web.dev/accessible-angular-with-codelyzer/
+  </a>
+</div>
+&
+<a src="http://codelyzer.com/rules/">codelyzer rules</a>
+with TSLint
+<div class="inline-block my-2 w-full">
+  <h2 class="text-xl">Accessibility Attributes</h2>
+  <hr class="bg-secondary h-1 w-full mb-4" />
+
+  <p>
+    <mark>
+      Web Accessibility Initiative's Accessible Rich Internet Applications
+    </mark>
+    specification - extends accessibility tree to provide semantic meaning for
+    screen readers/assistive technology
+  </p>
+  <p>
+    Use attribute binding template syntax to control the values of
+    accessibility-related attributes.
+  </p>
+
+  <p>
+    When binding, use the
+    <mark>attr. prefix</mark>
+    , as ARIA specification depends specifically on HTML attributes, not
+    properties on DOM elements.
+  </p>
+
+  <markdown [data]="ariaMarkdown | language: 'html'"></markdown>
+
+  <p>Static ARIA attributes don't need this:</p>
+  <markdown [data]="staticAriaMarkdown | language: 'html'"></markdown>
+</div>
+<div class="inline-block my-2 w-full">
+  <h2 class="text-xl">Material UI & A11y</h2>
+  <hr class="bg-secondary h-1 w-full mb-4" />
+
+  <p>
+    <mark>MaterialUI:</mark>
+    ships with
+    <a
+      src="https://material.angular.io/cdk/a11y/overview"
+      target="_blank"
+      rel="noopenner noreferrer"
+    >
+      https://material.angular.io/cdk/a11y/overview
+    </a>
+  </p>
+</div>
+
+<div class="inline-block my-2 w-full">
+  <h2 class="text-xl">Focus</h2>
+  <hr class="bg-secondary h-1 w-full mb-4" />
+  From the
+  <a
+    src="https://angular.io/guide/accessibility"
+    target="_blank"
+    rel="noopenner noreferrer"
+  >
+    Angular Docs
+  </a>
+  :
+
+  <div class="my-2 p-2 bg-white">
+    <ul>
+      <li class="content">
+        When using Angular routing, you should decide where page focus goes upon
+        navigation.
+      </li>
+      <li class="content">
+        To avoid relying solely on visual cues, you need to make sure your
+        routing code updates focus after page navigation.
+      </li>
+      <li class="content">
+        Use the NavigationEnd event from the Router service to know when to
+        update focus.
+      </li>
+    </ul>
+  </div>
+
+  <markdown [data]="routesMarkdown | language: 'javascript'"></markdown>
+</div>
+<div class="inline-block my-2 w-full">
+  <h2 class="text-xl">Color Contrast</h2>
+  <hr class="bg-secondary h-1 w-full mb-4" />
+  <p>
+    Checking colour contrast with
+    <a
+      src="https://webaim.org/resources/contrastchecker/"
+      target="_blank"
+      rel="noopenner noreferrer"
+    >
+      WebAIM tool
+    </a>
+    and
+    <a
+      src="https://webaim.org/articles/contrast/"
+      target="_blank"
+      rel="noopenner noreferrer"
+    >
+      success criteria
+    </a>
+  </p>
+  <table class="table-auto my-4 bg-white rounded">
+    <caption>background/foreground ratio</caption>
+    <thead>
+      <tr>
+        <th class="px-4 py-2"></th>
+        <th class="px-4 py-2">AA rating</th>
+        <th class="px-4 py-2">AAA rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border px-4 py-2">Body Text:</td>
+        <td class="border px-4 py-2">4.5:1</td>
+        <td class="border px-4 py-2">7:1</td>
+      </tr>
+      <tr class="bg-gray-100">
+        <td class="border px-4 py-2">
+          Larger Text (120-150% larger than body:
+        </td>
+        <td class="border px-4 py-2">3:1</td>
+        <td class="border px-4 py-2">4.5:1</td>
+      </tr>
+      <tr>
+        <td class="border px-4 py-2">Components/icons/graphs:</td>
+        <td class="border px-4 py-2">3:1</td>
+        <td class="border px-4 py-2">n/a</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -3,26 +3,26 @@
 @tailwind utilities;
 
 .active {
-  background-color: theme(backgroundColor.background-dark);
-  color: theme(colors.white);
+  @apply bg-backgroundDark;
+  @apply text-white;
 }
 
 header {
-    .token.function {
-    color: theme(backgroundColor.accent);
+  .token.function {
+    @apply text-accent;
   }
 }
 
 li.bullet:before {
-  content: "\01F5A4";
-  font-size: .75rem;
+  content: '\01F5A4';
+  font-size: 0.75rem;
 }
 
 .content:before {
   content: '-';
-  color: theme(textColor.secondary);
   font-weight: bold;
   margin-right: 5px;
+  @apply text-secondary;
 }
 
 .wavy-underline {
@@ -35,6 +35,21 @@ li.bullet:before {
 mark {
   display: inline-block;
   line-height: 0rem;
-  padding-bottom: .65rem;
-  background-color: theme(textColor.light-accent);
+  padding-bottom: 0.65rem;
+  @apply bg-accentLight;
+}
+
+a:not(.nav) {
+  @apply font-bold;
+
+  &:visited {
+    @apply text-secondary;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    @apply bg-accent;
+    @apply text-white;
+  }
 }

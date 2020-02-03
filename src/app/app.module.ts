@@ -15,6 +15,9 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { ResourcesComponent } from './resources/resources.component';
+import { AccessibilityComponent } from './accessibility/accessibility.component';
+import { AnimationsComponent } from './animations/animations.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { ResourcesComponent } from './resources/resources.component';
     HomeComponent,
     AboutComponent,
     FooterComponent,
-    ResourcesComponent
+    ResourcesComponent,
+    AccessibilityComponent,
+    AnimationsComponent,
+    RxjsComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,9 +40,9 @@ import { ResourcesComponent } from './resources/resources.component';
     ReactiveFormsModule,
     HttpClientModule,
     MarkdownModule.forRoot({ loader: HttpClient }),
-    NgxPageScrollModule
+    NgxPageScrollModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
