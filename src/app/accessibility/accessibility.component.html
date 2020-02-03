@@ -10,9 +10,11 @@
     target="_blank"
     rel="noopenner noreferrer"
   >
-    w3 resources on WAI - Web Accessibility Initiative
+    w3 resources on
+    <mark>WAI</mark>
+    - Web Accessibility Initiative
   </a>
-  <ul>
+  <ul class=" bg-white py-2 px-4 my-2 rounded">
     <li class="content">Auditory</li>
     <li class="content">Cognitive, Learning & Neurological</li>
     <li class="content">Physical/Motor disabilities</li>
@@ -56,44 +58,46 @@
   </a>
 </div>
 
-<h1 class="text-3xl">POUR principles:</h1>
-<hr class="bg-accent h-1 w-full mb-4" />
-<div class="inline-block my-2 w-full">
+<h1 class="text-3xl mt-2">POUR principles:</h1>
+<hr class="bg-primary h-1 w-full mb-4" />
+<div class="inline-block w-full bg-white py-2 px-4 my-2 rounded">
   <ul>
     <li class="content">
-      <strong>Perceivable:</strong>
+      <mark><strong>Perceivable:</strong></mark>
       Can users perceive the content? This helps us keep in mind that just
       because something is perceivable with one sense, such as sight, that
       doesn't mean that all users can perceive it.
     </li>
     <li class="content">
-      <strong>Operable:</strong>
+      <mark><strong>Operable:</strong></mark>
       Can users use UI components and navigate the content? For example,
       something that requires a hover interaction cannot be operated by someone
       who can't use a mouse or touch screen.
     </li>
     <li class="content">
-      <strong>Understandable:</strong>
+      <mark><strong>Understandable:</strong></mark>
       Can users understand the content? Can users understand the interface and
       is it consistent enough to avoid confusion?
     </li>
     <li class="content">
-      <strong>Robust:</strong>
+      <mark><strong>Robust:</strong></mark>
       Can the content be consumed by a wide variety of user agents (browsers)?
       Does it work with assistive technology?
     </li>
   </ul>
 </div>
 
-<h1 class="text-3xl">Accessibility in Angular</h1>
-<hr class="bg-accent h-1 w-full mb-4" />
+<h1 class="text-3xl mt-2">Accessibility in Angular</h1>
+<hr class="bg-primary h-1 w-full mb-4" />
 <div class="inline-block my-2 w-full">
   <h2 class="text-xl">Accessibility Attributes</h2>
   <hr class="bg-secondary h-1 w-full mb-4" />
 
   <p>
-    Web Accessibility Initiative's Accessible Rich Internet Applications
-    specification - extends accessibility tree - to provide semantic meaning for
+    <mark>
+      Web Accessibility Initiative's Accessible Rich Internet Applications
+    </mark>
+    specification - extends accessibility tree to provide semantic meaning for
     screen readers/assistive technology
   </p>
   <p>
@@ -102,19 +106,16 @@
   </p>
 
   <p>
-    When binding to ARIA attributes in Angular, you must use the attr. prefix,
-    as the ARIA specification depends specifically on HTML attributes rather
-    than properties on DOM elements.
+    When binding, use the
+    <mark>attr. prefix</mark>
+    , as ARIA specification depends specifically on HTML attributes, not
+    properties on DOM elements.
   </p>
 
   <markdown [data]="ariaMarkdown | language: 'html'"></markdown>
-  <button [attr.aria-label]="myActionLabel">...</button>
 
-  Note that this syntax is only necessary for attribute bindings. Static ARIA
-  attributes require no extra syntax.
-
-  <!-- Static ARIA attributes require no extra syntax -->
-  <button aria-label="Save document">...</button>
+  <p>Static ARIA attributes don't need this:</p>
+  <markdown [data]="staticAriaMarkdown | language: 'html'"></markdown>
 </div>
 
 <h2 class="text-xl">Focus</h2>
