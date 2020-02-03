@@ -1,1 +1,112 @@
-<p>rxjs works!</p>
+<h1 class="text-3xl">RxJS - aka Reactive Extensions for JavaScript</h1>
+<hr class="bg-accent h-1 w-full mb-4" />
+
+<mark>All code examples on this page are from the official Angular docs</mark>
+
+<h2 class="text-2xl mt-4">Reactive programming w RxJS & Observables</h2>
+<hr class="bg-primary h-1 w-full mb-4" />
+
+<p>
+  Asynchronous programming paradigm -> data streams & propagation of change/
+  easier to compose asynchronous or callback-based code (e.g. via
+  next/error/complete).
+  <mark>'The lodash of events'</mark>
+</p>
+
+<h2 class="text-2xl mt-4">Creating Observables</h2>
+<hr class="bg-secondary h-1 w-full mb-4" />
+<div class="w-full bg-white py-2 px-4 my-2 rounded">
+  <ul class="p-2">
+    <li class="my-2 content">
+      <mark>of(...items)</mark>
+      —Returns an Observable instance that synchronously delivers the values
+      provided as arguments.
+    </li>
+    <li class="mb-2 content">
+      <mark>from(iterable)</mark>
+      —Converts its argument to an Observable instance. This method is commonly
+      used to convert an array to an observable.
+    </li>
+    <li class="mb-2 content">
+      Observable
+      <mark>constructor</mark>
+      e.g. re: custom events
+      <markdown
+        [data]="observableEventMarkdown | language: 'javascript'"
+      ></markdown>
+    </li>
+  </ul>
+</div>
+<p>
+  An Observable instance begins publishing values
+  <mark>only when someone subscribes to it</mark>
+  i.e. by calling the subscribe() method of the instance & passing an observer
+  object to receive the notifications.
+</p>
+
+<p class="mt-2">From docs:</p>
+<div class="w-full bg-white py-2 px-4 my-2 rounded">
+  <ul class="list-none list-outside p-2">
+    <li class="content">
+      Converting existing code for async operations into observables
+    </li>
+    <li class="content">Iterating through the values in a stream</li>
+    <li class="content">Mapping values to different types</li>
+    <li class="content">Filtering streams</li>
+    <li class="content">Composing multiple streams</li>
+    <li class="content">
+      'Type ahead' operations e.g. debouncing, cancelling, trimming etc.
+    </li>
+  </ul>
+</div>
+
+<p>Specifically in Angular:</p>
+<div class="w-full bg-white py-2 px-4 my-2 rounded">
+  <ul class="list-none list-outside p-2">
+    <li class="content">
+      custom events to send observable output data from child component to
+      parent - via
+      <mark>EventEmitter</mark>
+    </li>
+    <li class="content">
+      AJAX requests/responses w
+      <mark>HTTP module</mark>
+    </li>
+    <li class="content">
+      <mark>Router</mark>
+      - user navigation re: ActivatedRoute
+    </li>
+    <li class="content">
+      <mark>Reactive Forms:</mark>
+      listen for/respond to user input e.g. FormControl properties valueChanges
+      and statusChanges
+    </li>
+    &
+    <li class="content">
+      Named usu. w trailing
+      <mark>$</mark>
+      to make them easier to identify when scanning code
+    </li>
+  </ul>
+</div>
+<markdown [data]="observablesMarkdown | language: 'javascript'"></markdown>
+
+<h2 class="text-2xl mt-4">Operators</h2>
+<hr class="bg-secondary h-1 w-full mb-4" />
+
+<p>
+  part of Observables pipeline to transform/manipulate data esp. map(),
+  filter(), concat(), and flatMap().
+</p>
+<markdown [data]="observablePipeMarkdown | language: 'javascript'"></markdown>
+
+<h2 class="text-2xl mt-4">Error Handling</h2>
+<hr class="bg-secondary h-1 w-full mb-4" />
+
+<markdown [data]="catchErrorMarkdown | language: 'javascript'"></markdown>
+
+<h2 class="text-2xl mt-4">Retry</h2>
+<hr class="bg-secondary h-1 w-full mb-4" />
+
+Operator lets you retry observables - tho' not to be used with authentication!
+<markdown [data]="retryMarkdown | language: 'javascript'"></markdown>
