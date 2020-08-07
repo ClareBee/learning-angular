@@ -31,7 +31,7 @@
     "ngx-markdown": "^8.2.1",
     "ngx-page-scroll": "^7.0.0",
     "ngx-page-scroll-core": "^7.0.0",
-    "prismjs": "^1.19.0",
+    "prismjs": "^1.21.0",
     "rxjs": "~6.4.0",
     "tailwindcss": "^1.1.4",
     "tslib": "^1.10.0",
